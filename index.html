@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Veterinária Clara Coelho</title>
+    <link rel="stylesheet" href="public/assets/reset.css">
+    <link rel="stylesheet" href="public/assets/global.css">
+    <style>
+        .mySlides {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <video id="loading-video" autoplay muted style="width: 100%;">
+        <source src="public/public/202310311326.mp4" type="video/mp4">
+    </video>
+    
+    <div id="site-content">
+    <header>
+        <div class="header-container">
+        <h1 class="logo">Clínica Veterinária Clara Coelho</h1>
+        <nav>
+            <ul>
+                <li><a href="#servicos">Nossos Serviços</a></li>
+                <li><a href="#produtos">Nossos Produtos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </div>
+    </header>
+
+    <section class="banner">
+        <h2>Bem-vindo à Clínica Veterinária Clara Coelho</h2>
+        <p>Serviços de saúde e bem-estar para o seu animal de estimação</p>
+    </section>
+    <section class="video-container">
+        <video id="meuVideo" controls onclick="adjustZIndex(this)">
+            <source src="public/public/lv_0_20231006170119.mp4" type="video/mp4" >
+        </video>
+    </section>
+
+    <section id="servicos">
+        <h2>Nossos Serviços</h2>
+        <ul>
+            <li>
+                <div class="servico-item">
+                    <img src="public/public/vacinas.png" width="50px"height="50px" alt="Ícone de vacinação">
+                    <h3>Vacinação</h3>
+                    <p>Oferecemos uma variedade de vacinas para manter seu animal de estimação saudável e protegido.</p>
+                </div>
+            </li>
+            <li>
+                <div class="servico-item">
+                    <img src="public/public/rotina.png" width="50px" height="50px" alt="Ícone de consulta">
+                    <h3>Consulta de rotina</h3>
+                    <p>Agende consultas regulares para garantir que seu animal esteja sempre em boa saúde.</p>
+                </div>
+            </li>
+            <li>
+                <div class="servico-item">
+                    <img src="public/public/domiciliar.png" width="50px"height="50px" alt="Ícone de atendimento domiciliar">
+                    <h3>Atendimento Domiciliar</h3>
+                    <p>Oferecemos serviços de atendimento domiciliar para maior comodidade e conforto do seu pet.</p>
+                </div>
+            </li>
+            <li>
+                <div class="servico-item">
+                    <img src="public/public/exames.png" width="50px"height="50px" alt="Ícone de exames de diagnóstico">
+                    <h3>Exames de diagnóstico</h3>
+                    <p>Realizamos exames avançados para diagnosticar problemas de saúde de forma precisa.</p>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <section id="produtos">
+        <h1>Medicamentos - Rações - Brinquedos - Conforto</h1>
+        <div class="slideshow-container">
+            <div class="mySlides">
+                <img src="public/public/imagem1.jpeg">
+            </div>
+            <div class="mySlides">
+                <img src="public/public/imagem2.jpeg">
+            </div>
+            <div class="mySlides">
+                <img src="public/public/imagem3.jpeg">
+            </div>
+            <div class="mySlides">
+                <img src="public/public/imagem4.jpeg">
+            </div>
+            <div class="mySlides">
+                <img src="public/public/imagem5.jpeg">
+            </div>
+            <div class="mySlides">
+                <img src="public/public/imagem6.jpeg">
+            </div>
+            <div class="mySlides">
+                <img src="public/public/imagem7.jpeg">
+            </div>
+        </div>
+    </section>
+
+    <section id="contato">
+        <h2>Contato</h2>
+        <p>Entre em contato conosco para marcar uma consulta</p>
+        <p></p><a href="https://www.instagram.com/clinicaveterinariaclaracoelho/" target="_blank"><img src="public/public/580b57fcd9996e24bc43c521.png" height="50px" width="50px" alt="">@ClinicaVeterinariaClaraCoelho</a></p>
+        <p>
+            <a href="https://wa.me/message/ZNIZR3HCEK7AK1" target="_blank">
+                <img src="public/public/logo-whats.png" alt="logo-whats" width="50px" height="50px">
+            
+            (84) 9 8722-4578</a>
+        </p>
+        <p>Endereço:
+            <a href="https://maps.app.goo.gl/572rKwdcTtL4a44B6" target="_blank">Rua Fárias, 251, Planalto Treze de Maio </a>
+        </p>
+        <p id="local">Clique acima para localização exata.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Clínica Veterinária Clara Coelho</p>
+    </footer>
+    </div>
+    
+    <div id="scroll-to-top" class="scroll-to-top" onclick="scrollToTop()">
+        <span>&uarr;</span></div>
+    <script>
+        var meuVideo = document.getElementById("meuVideo");
+        meuVideo.addEventListener("play", function () {
+            meuVideo.play();
+        });
+
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000);
+        }
+
+        const loadingVideo = document.getElementById('loading-video');
+        loadingVideo.addEventListener('loadeddata', () => {
+            loadingVideo.addEventListener('ended', () => {
+                const siteContent = document.getElementById('site-content');
+                siteContent.style.display = 'block';
+                loadingVideo.style.opacity = 0;
+                setTimeout(() => {
+                    loadingVideo.style.display = 'none';
+                }, 4000);
+            });
+        });
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' 
+            });
+        }
+
+        window.addEventListener('scroll', function() {
+            var scrollButton = document.getElementById('scroll-to-top');
+            if (window.scrollY > 200) { 
+                scrollButton.style.display = 'block';
+            } else {
+                scrollButton.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
