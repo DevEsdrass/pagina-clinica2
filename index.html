@@ -13,11 +13,6 @@
     </style>
 </head>
 <body>
-    <video id="loading-video" autoplay style="width: 100%;">
-        <source src="public/public/202310311326.mp4" type="video/mp4">
-    </video>
-    
-    <div id="site-content">
     <header>
         <div class="header-container">
         <h1 class="logo">Clínica Veterinária Clara Coelho</h1>
@@ -121,7 +116,6 @@
     <footer>
         <p>&copy; 2023 Clínica Veterinária Clara Coelho</p>
     </footer>
-    </div>
     
     <div id="scroll-to-top" class="scroll-to-top" onclick="scrollToTop()">
         <span>&uarr;</span></div>
@@ -147,19 +141,7 @@
             slides[slideIndex - 1].style.display = "block";
             setTimeout(showSlides, 3000);
         }
-
-        const loadingVideo = document.getElementById('loading-video');
-        loadingVideo.addEventListener('loadeddata', () => {
-            loadingVideo.addEventListener('ended', () => {
-                const siteContent = document.getElementById('site-content');
-                siteContent.style.display = 'block';
-                loadingVideo.style.opacity = 0;
-                setTimeout(() => {
-                    loadingVideo.style.display = 'none';
-                }, 4000);
-            });
-        });
-
+        
         function scrollToTop() {
             window.scrollTo({
                 top: 0,
